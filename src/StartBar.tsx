@@ -3,7 +3,6 @@ import { Button, MenuList, MenuListItem, Separator, Toolbar } from "react95"
 import { AppBar } from "react95/dist/AppBar/AppBar"
 import windowsLogo from "./assets/windows-logo.svg"
 
-
 export function StartBar() {
   const [open, setOpen] = useState(false);
   
