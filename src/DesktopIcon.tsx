@@ -5,10 +5,11 @@ import { useEffect, useRef, useState } from "react";
 export function DesktopIcon() {
     const iconRef = useRef<HTMLDivElement>(null);
     const [highlighted, setHighlighted] = useState(false);
-    const iconClassName = "icon " + (highlighted ? 'icon-selected' : '');
+    const iconClassName = "icon" + (highlighted ? ' icon-selected' : '');
 
     useEffect(() => {
         document.addEventListener("click", handleClickOutside);
+        
         return () => {
             document.removeEventListener("click", handleClickOutside);
         };
@@ -21,7 +22,7 @@ export function DesktopIcon() {
     }
 
     return (
-        <div ref={iconRef} className={iconClassName} onClick={() => setHighlighted(true)}>
+        <div ref={iconRef} className={iconClassName} onClick={() => setHighlighted(true)} onDoubleClick={() => console.log('double clicked!')}>
             <Bat variant="32x32_4"/>
             <span className='icon-label'>Resume</span>
         </div>
